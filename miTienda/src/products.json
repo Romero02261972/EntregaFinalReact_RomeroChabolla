@@ -1,0 +1,74 @@
+[
+ {
+  "id": 1,
+  "name": "Arreglo de rosas",
+  "description": "Arreglo de rosas rojas en canasta",
+  "stock": 10,
+  "price": 2500,
+  "category": "flores"
+ },
+ {
+  "id": 2,
+  "name": "Arreglo de lilas",
+  "description": "Arreglo de lilas con listón",
+  "stock": 17,
+  "price": 1200,
+  "category": "flores"
+ },
+ {
+  "id": 3,
+  "name": "Arreglo de flores",
+  "description": "Arreglo de flores de colores",
+  "stock": 15,
+  "price": 1000,
+  "category": "flores"
+ },
+ {
+  "id": 4,
+  "name": "jardín de cactáceas",
+  "description": "Diseño de jardín con suculentas y cactáceas",
+  "stock": 10,
+  "price": 20000,
+  "category": "jardines"
+ },
+ {
+  "id": 5,
+  "name": "jardín de helechos",
+  "description": "Diseño de jardín con helechos",
+  "stock": 10,
+  "price": 25000,
+  "category": "jardines"
+ },
+ {
+  "id": 6,
+  "name": "jardín de flores",
+  "description": "Diseño de jardín con plantas y flores",
+  "stock": 10,
+  "price": 30000,
+  "category": "jardines"
+ },
+ {
+  "id": 7,
+  "name": "poda de árboles",
+  "description": "servico de poda de árboles",
+  "stock": 10,
+  "price": 40000,
+  "category": "servicios"
+ },
+ {
+  "id": 8,
+  "name": "mantenimiento de jardines",
+  "description": "servicio de mantenimiento y diagnóstico de jardines",
+  "stock": 10,
+  "price": 50000,
+  "category": "servicios"
+ },
+ {
+  "id": 9,
+  "name": "invernaderos",
+  "description": "instalación de invernaderos",
+  "stock": 10,
+  "price": 80000,
+  "category": "servicios"
+ }
+]
