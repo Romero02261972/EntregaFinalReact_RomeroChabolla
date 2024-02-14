@@ -8,7 +8,7 @@ function ColorSchemesExample() {
   return (
     <header>
       <Navbar data-bs-theme="dark">
-        <Link to="/">
+             <Link to="/">
           <img
             width={100}
             src=" https://img.freepik.com/vector-premium/ilustracion-flor_498740-7488.jpg?w=740"
@@ -25,7 +25,7 @@ function ColorSchemesExample() {
           </Nav>
         </Container>
       </Navbar>
-    </header>
-  );
+      </header>
+     );
 }
 export default ColorSchemesExample;

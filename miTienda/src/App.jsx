@@ -16,7 +16,7 @@ function App() {
         />
         <Route
           path="/item/:id"
-          element={<ItemDetailContainer greeting="Te damos la bienvenida a " />}
+          element={<ItemDetailContainer />}
         />
       </Routes>
     </BrowserRouter>

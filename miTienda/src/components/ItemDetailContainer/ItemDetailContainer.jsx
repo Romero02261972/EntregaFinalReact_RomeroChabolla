@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import productsJson from "../../products.json";
 import Card from "react-bootstrap/Card";
+
 function asyncMock(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -37,9 +38,7 @@ export default function ItemDetailContainer(props) {
           style={{ width: "18rem" }}
           key={product.id}
         >
-          {/* <Card.Img variant="top" src="https://picsum.photos/200/100" /> */}
           <Card.Body>
-            <Card.Title>{product.name}</Card.Title>
             <Card.Text>
               Description: {product.description}
               <br />

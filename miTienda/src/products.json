@@ -1,10 +1,10 @@
 [
- {
+     {
   "id": 1,
   "name": "Arreglo de rosas",
   "description": "Arreglo de rosas rojas en canasta",
   "stock": 10,
-  "price": 2500,
+  "price": "2,500",
   "category": "flores"
  },
  {
@@ -12,7 +12,7 @@
   "name": "Arreglo de lilas",
   "description": "Arreglo de lilas con listón",
   "stock": 17,
-  "price": 1200,
+  "price": "1,200",
   "category": "flores"
  },
  {
@@ -20,7 +20,7 @@
   "name": "Arreglo de flores",
   "description": "Arreglo de flores de colores",
   "stock": 15,
-  "price": 1000,
+  "price": "1,000",
   "category": "flores"
  },
  {
@@ -28,7 +28,7 @@
   "name": "jardín de cactáceas",
   "description": "Diseño de jardín con suculentas y cactáceas",
   "stock": 10,
-  "price": 20000,
+  "price": "20,000",
   "category": "jardines"
  },
  {
@@ -36,7 +36,7 @@
   "name": "jardín de helechos",
   "description": "Diseño de jardín con helechos",
   "stock": 10,
-  "price": 25000,
+  "price": "25,000",
   "category": "jardines"
  },
  {
@@ -44,15 +44,15 @@
   "name": "jardín de flores",
   "description": "Diseño de jardín con plantas y flores",
   "stock": 10,
-  "price": 30000,
+  "price": "30,000",
   "category": "jardines"
  },
  {
   "id": 7,
   "name": "poda de árboles",
-  "description": "servico de poda de árboles",
+  "description": "servicio de poda de árboles",
   "stock": 10,
-  "price": 40000,
+  "price": "40,000",
   "category": "servicios"
  },
  {
@@ -60,7 +60,7 @@
   "name": "mantenimiento de jardines",
   "description": "servicio de mantenimiento y diagnóstico de jardines",
   "stock": 10,
-  "price": 50000,
+  "price": "50,000",
   "category": "servicios"
  },
  {
@@ -68,7 +68,7 @@
   "name": "invernaderos",
   "description": "instalación de invernaderos",
   "stock": 10,
-  "price": 80000,
+  "price": "80,000",
   "category": "servicios"
  }
 ]
