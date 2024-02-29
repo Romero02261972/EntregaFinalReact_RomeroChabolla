@@ -2,7 +2,7 @@ import React from "react";
 import { FaShoppingBag } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-import "./cartWidget.css";
+//import "./cartWidget.css";
 
 export const CartWidget = () => {
   return (
@@ -14,3 +14,4 @@ export const CartWidget = () => {
     </Button>
   );
 };
+
