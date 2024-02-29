@@ -1,0 +1,84 @@
+[
+   {
+   "id" : 1,
+   "name" :  "Arreglo de rosas" ,
+   "image": "/public/images/rosas.jpg",
+   "description" :  "Arreglo de rosas rojas en canasta" ,
+   "stock" : 10,
+   "price" :  2500 ,
+   "category" :  "flores" 
+  },
+  {
+    "id" : 2,
+    "name" :  "Arreglo de lilas" ,
+    "image": "/public/images/lilas.jpg",
+    "description" :  "Arreglo de lilas" ,
+    "stock" : 20,
+    "price" :  1500 ,
+    "category" :  "flores" 
+   },
+   {
+    "id" : 3,
+    "name" :  "Arreglo de flores" ,
+    "image": "/public/images/flores.jpg",
+    "description" :  "Arreglo de flores de colores" ,
+    "stock" : 50,
+    "price" :  1000 ,
+    "category" :  "flores" 
+   },
+   {
+    "id" : 4,
+    "name" :  "jardín de cactaceas" ,
+    "image": "/public/images/jardinCactaceas.jpg",
+    "description" :  "diseño de jardín de cactáceas y suculentas" ,
+    "stock" : 5,
+    "price" :  25000 ,
+    "category" :  "jardines" 
+   },
+   {
+    "id" : 5,
+    "name" :  "Jardín de helechos" ,
+    "image": "/public/images/jardinHelechos.jpg",
+    "description" :  "Diseño de jardín de helechos" ,
+    "stock" : 4,
+    "price" :  18000 ,
+    "category" :  "jardines" 
+   },
+   {
+    "id" : 6,
+    "name" :  "Jardín de flores" ,
+    "image": "/public/images/jardinFlores.jpg",
+    "description" :  "Diseño de jardín de flores de colores" ,
+    "stock" : 3,
+    "price" :  30000 ,
+    "category" :  "jardines" 
+   },
+   {
+    "id" : 7,
+    "name" :  "Instalación de invernaderos" ,
+    "image": "/public/images/invernadero.jpg",
+    "description" :  "Instalación de invernadero" ,
+    "stock" : 10,
+    "price" :  50000 ,
+    "category" :  "servicios" 
+   },
+   {
+    "id" : 8,
+    "name" :  "Poda de árboles" ,
+    "image": "/public/images/poda.jpg",
+    "description" :  "Poda de árboles" ,
+    "stock" : 13,
+    "price" :  15000,
+    "category" :  "servicios" 
+   },
+   {
+    "id" : 9,
+    "name" :  "mantenimiento de jardines" ,
+    "image": "/public/images/mantenimientoJardines.jpg",
+    "description" :  "limpieza y arreglo de jardines" ,
+    "stock" : 2,
+    "price" :  20000 ,
+    "category" :  "servicios" 
+   }]
+
+

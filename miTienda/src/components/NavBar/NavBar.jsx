@@ -10,14 +10,14 @@ function ColorSchemesExample() {
       <Navbar data-bs-theme="dark">
              <Link to="/">
           <img
-            width={100}
+            width={110}
             src=" https://img.freepik.com/vector-premium/ilustracion-flor_498740-7488.jpg?w=740"
           />
         </Link>
         <Container>
           <Nav className="enlace">
             <h3>
-              <NavLink to="/category/flores">Arreglo de flores</NavLink>
+              <NavLink to="/category/flores">Arreglos Florales</NavLink>
               <NavLink to="/category/jardines">Diseño de jardines</NavLink>
               <NavLink to="/category/servicios">Servicios</NavLink>
               <NavLink to="carrito"><CartWidget/></NavLink>

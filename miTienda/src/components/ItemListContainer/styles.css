@@ -1,0 +1,8 @@
+.photoSize {
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 1500px; 
+  height: 500px; 
+  object-fit: cover;
+ 
+}

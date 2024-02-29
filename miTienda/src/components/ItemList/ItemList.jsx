@@ -1,7 +1,17 @@
 import React from 'react'
+import Item from "../Item/Item"
 
-export const ItemList = () => {
+const ItemList = ({products}) => {
   return (
-    <div>ItemList</div>
-  )
-}
+    <div className= "container"> 
+    <h2>Productos</h2>
+    <ul>
+      {products.map((product, index)=>(
+        <Item key={index} product={product} />
+      ))}
+    </ul>
+    </div>
+  );
+};
+
+export default ItemList;

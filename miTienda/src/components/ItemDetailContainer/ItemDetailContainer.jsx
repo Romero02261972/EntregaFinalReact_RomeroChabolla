@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import productsJson from "../../products.json";
 import Card from "react-bootstrap/Card";
+import  ItemCount  from "../ItemCount/ItemCount";
 
 function asyncMock(id) {
   return new Promise((resolve, reject) => {
@@ -9,45 +9,53 @@ function asyncMock(id) {
       console.log(id);
       console.log(typeof id);
       if (id === undefined) {
-        resolve(productsJson[0]);
+        resolve(articulosJson[0]);
       } else {
-        const productosFiltrados = productsJson.filter((item) => {
+        const articulosFiltrados = articulosJson.filter((item) => {
           return item.id === parseInt(id);
         });
-        console.log(productosFiltrados);
-        resolve(productosFiltrados[0]);
+        console.log(articulosFiltrados);
+        resolve(articulosFiltrados[0]);
       }
-    }, 1000);
+    }, );
   });
 }
 export default function ItemDetailContainer(props) {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [articulo, setarticulo] = useState([]);
   useEffect(() => {
-    asyncMock(id).then((res) => setProduct(res));
+    asyncMock(id).then((res) => setarticulo(res));
   }, [id]);
   return (
     <main>
       <h2 className="my-3 mx-auto text-center">
         {props.greeting}
-        {product.name}
+        {articulo.name}
+
       </h2>
       <section className="item-list-container">
         <Card
           className="mx-auto my-3"
-          style={{ width: "18rem" }}
-          key={product.id}
+          style={{ width: "40rem" }}
+          key={articulo.id}
         >
           <Card.Body>
+            <Card.Img
+              variant="top"
+              src={articulo.image}
+            />
             <Card.Text>
-              Description: {product.description}
+              Description: {articulo.description}
               <br />
-              Price: {product.price}
+              Price: {articulo.price}
               <br />
-              Category: {product.category}
+              Category: {articulo.category}
               <br />
-              Stock: {product.stock}
+              Stock: {articulo.stock}
             </Card.Text>
+            <ItemCount>
+              <h3>Contador</h3>
+            </ItemCount>
           </Card.Body>
         </Card>
       </section>
