@@ -20,7 +20,7 @@ function ColorSchemesExample() {
               <NavLink to="/category/flores">Arreglos Florales</NavLink>
               <NavLink to="/category/jardines">Diseño de jardines</NavLink>
               <NavLink to="/category/servicios">Servicios</NavLink>
-              <NavLink to="carrito"><CartWidget/></NavLink>
+              <NavLink to="/CartWidget"><CartWidget/></NavLink>
             </h3>
           </Nav>
         </Container>

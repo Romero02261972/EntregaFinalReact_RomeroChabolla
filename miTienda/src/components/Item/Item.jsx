@@ -1,25 +1,25 @@
 import React from 'react'
 
-const Item = ({ product }) => {
+const Item = ({ producto }) => {
   return (
     <li>
       <div className="product-card">
         <img
           src=""
-          alt={product.name}
+          alt={producto.name}
           className="product-image"
         />
         <div className="product-details">
           <div className="product-image">
-            <img src={product.imageId} />
+            <img src={producto.image} />
           </div>
-          <h3 className="product-name">{product.name}</h3>
-          <p className="product-description">{product.description}</p>
+          <h3 className="product-name">{producto.name}</h3>
+          <p className="product-description">{producto.description}</p>
           <div className="price-stock">
-            <p className="product-price">${product.price}</p>
-            <p className="product-stock">Stock: {product - stock}</p>
+            <p className="product-price">${producto.price}</p>
+            <p className="product-stock">Stock: {producto.stock}</p>
           </div>
-          <p className="category-id">Category ID: {product.categoryId}</p>
+          <p className="category-id">Category ID: {producto.category}</p>
         </div>
       </div>
     </li>

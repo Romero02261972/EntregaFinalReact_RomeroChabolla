@@ -2,29 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import  ItemCount  from "../ItemCount/ItemCount";
+import Button from "react-bootstrap/esm/Button";
 
-function asyncMock(id) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log(id);
-      console.log(typeof id);
-      if (id === undefined) {
-        resolve(articulosJson[0]);
-      } else {
-        const articulosFiltrados = articulosJson.filter((item) => {
-          return item.id === parseInt(id);
-        });
-        console.log(articulosFiltrados);
-        resolve(articulosFiltrados[0]);
-      }
-    }, );
-  });
-}
+
+     
 export default function ItemDetailContainer(props) {
   const { id } = useParams();
   const [articulo, setarticulo] = useState([]);
   useEffect(() => {
-    asyncMock(id).then((res) => setarticulo(res));
+    
   }, [id]);
   return (
     <main>
@@ -53,9 +39,11 @@ export default function ItemDetailContainer(props) {
               <br />
               Stock: {articulo.stock}
             </Card.Text>
+            <Button>
             <ItemCount>
               <h3>Contador</h3>
             </ItemCount>
+            </Button>
           </Card.Body>
         </Card>
       </section>

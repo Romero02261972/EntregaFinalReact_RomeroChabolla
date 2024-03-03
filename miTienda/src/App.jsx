@@ -8,16 +8,10 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
-        <Route
-          path="/category/:id"
-          element={
-            <ItemListContainer greeting="Te damos la bienvenida a la categoría " />
-          }
-        />
-        <Route
-          path="/item/:id"
-          element={<ItemDetailContainer />}
-        />
+        <Route path="/category/:id" element={<ItemListContainer greeting="Te damos la bienvenida a la categoría " /> }/>
+        <Route path="/item/:id"element={<ItemDetailContainer />}/>
+        <Route path="/productos" element={<ItemListContainer/>}/>
+        <Route path="productos/:categoria" element={<ItemListContainer/>}/>
       </Routes>
     </BrowserRouter>
   );
