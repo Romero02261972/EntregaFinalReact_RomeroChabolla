@@ -8,7 +8,7 @@ import Button from "react-bootstrap/esm/Button";
      
 export default function ItemDetailContainer(props) {
   const { id } = useParams();
-  const [articulo, setarticulo] = useState([]);
+  const [producto, setproducto] = useState([]);
   useEffect(() => {
     
   }, [id]);
@@ -16,28 +16,28 @@ export default function ItemDetailContainer(props) {
     <main>
       <h2 className="my-3 mx-auto text-center">
         {props.greeting}
-        {articulo.name}
+        {producto.name}
 
       </h2>
       <section className="item-list-container">
         <Card
           className="mx-auto my-3"
           style={{ width: "40rem" }}
-          key={articulo.id}
+          key={producto.id}
         >
           <Card.Body>
             <Card.Img
               variant="top"
-              src={articulo.image}
+              src={producto.image}
             />
             <Card.Text>
-              Description: {articulo.description}
+              Description: {producto.description}
               <br />
-              Price: {articulo.price}
+              Price: {producto.price}
               <br />
-              Category: {articulo.category}
+              Category: {producto.category}
               <br />
-              Stock: {articulo.stock}
+              Stock: {producto.stock}
             </Card.Text>
             <Button>
             <ItemCount>

@@ -29,7 +29,7 @@
    {
     "id" : 4,
     "name" :  "jardín de cactaceas" ,
-    "image": "/public/images/jardinCactaceas.jpg",
+    "image": "jardinCactaceas.jpg",
     "description" :  "diseño de jardín de cactáceas y suculentas" ,
     "stock" : 5,
     "price" :  25000 ,
@@ -38,7 +38,7 @@
    {
     "id" : 5,
     "name" :  "Jardín de helechos" ,
-    "image": "/public/images/jardinHelechos.jpg",
+    "image": "/public/jardinHelechos.jpg",
     "description" :  "Diseño de jardín de helechos" ,
     "stock" : 4,
     "price" :  18000 ,
