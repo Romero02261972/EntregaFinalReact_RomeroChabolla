@@ -1,52 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Card from "react-bootstrap/Card";
-import  ItemCount  from "../ItemCount/ItemCount";
-import Button from "react-bootstrap/esm/Button";
+import ItemList from "../ItemList/ItemList";
+import {getFirestore, query, collection, where, getDocs} from "firebase/firestore";
 
+const ItemDetailContainer = ()=> {
+const [products, setProducts] = useState([]);
+const category = "Flores"
+useEffect(()=> {
+  const db = getFirestore();
 
-     
-export default function ItemDetailContainer(props) {
-  const { id } = useParams();
-  const [producto, setproducto] = useState([]);
-  useEffect(() => {
-    
-  }, [id]);
-  return (
-    <main>
-      <h2 className="my-3 mx-auto text-center">
-        {props.greeting}
-        {producto.name}
+  const productoRef = query(collection(db, "Productos"), where("category", "==", category));
+  getDocs(productoRef).then((collection) => {
+    const productos = collection.docs.map((doc)=>{
+      return doc.data();
+    });
+    setProducts(productos);
+  });
+}, []);
 
-      </h2>
-      <section className="item-list-container">
-        <Card
-          className="mx-auto my-3"
-          style={{ width: "40rem" }}
-          key={producto.id}
-        >
-          <Card.Body>
-            <Card.Img
-              variant="top"
-              src={producto.image}
-            />
-            <Card.Text>
-              Description: {producto.description}
-              <br />
-              Price: {producto.price}
-              <br />
-              Category: {producto.category}
-              <br />
-              Stock: {producto.stock}
-            </Card.Text>
-            <Button>
-            <ItemCount>
-              <h3>Contador</h3>
-            </ItemCount>
-            </Button>
-          </Card.Body>
-        </Card>
-      </section>
-    </main>
-  );
-}
+return <ItemList products={products} />;
+
+};
+
+export default ItemDetailContainer;
+

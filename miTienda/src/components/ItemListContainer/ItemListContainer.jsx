@@ -2,8 +2,7 @@ import productosJSON from "../../productos.json";
 import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
 import { getFirestore, doc, getDoc, collection, getDocs } from "firebase/firestore";
-//import "./styles.css";
-
+import "./styles.css";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
