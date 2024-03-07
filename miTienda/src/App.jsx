@@ -8,12 +8,12 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/category/:id" element={<ItemListContainer greeting="Te damos la bienvenida a la categoría " /> }/>
         <Route path="/item/:id"element={<ItemDetailContainer />}/>
-        <Route path="/productos" element={<ItemListContainer/>}/>
-        <Route path="productos/:categoria" element={<ItemListContainer/>}/>
+        <Route path="/Productos" element={<ItemListContainer/>}/>
+        <Route path="Productos/:category" element={<ItemListContainer/>}/>
       </Routes>
     </BrowserRouter>
+    
   );
 }
 export default App;

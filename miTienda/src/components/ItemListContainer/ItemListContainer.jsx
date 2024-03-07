@@ -1,23 +1,33 @@
-import productosJSON from "../../productos.json";
-import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
-import { getFirestore, doc, getDoc, collection, getDocs } from "firebase/firestore";
+import ItemList from "../ItemList/ItemList";
+import {useParams} from "react-router-dom";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+
 import "./styles.css";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const { category } = useParams ();
 
   useEffect(() => {
+    const fetchProducts= async ()=> {
     const db = getFirestore();
-    const productoRef = collection(db, "Productos");
+    
+    let productoRef;
+    if (!category) {
+      productoRef= collection(db, "Productos");
+    } else {
 
-    getDocs (productoRef).then((collection) => {
-  const productos = collection.docs.map((doc) => {
-    return doc.data();
-  });
-  setProducts (productos);
-});
-}, []);
+      productoRef = query( collection(db, "Productos"), where ("category", "==", category));
+    }
+        const snapshot = await getDocs(productoRef);
+         const productos = snapshot.docs.map((doc)=> doc.data());
+
+      setProducts(productos);
+    };
+    fetchProducts();
+    }, [category]);
+
 
 return <ItemList products={products} />;
 };
