@@ -1,57 +1,58 @@
-import { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList";
-import {useParams} from "react-router-dom";
-import { doc, getFirestore, getDoc, collection, getDocs, query, where } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { Card } from "react-bootstrap";
 
-//import "./styles.css";
-
-
-
-const ItemDetailContainer = ()=> {
-  const [item, setItem] = useState(null);
-  const id = useParams().id;
+function ItemDetailContainer() {
+  const { id } = useParams();
+  const [producto, setProducto] = useState(null);
 
   useEffect(() => {
-    const db = getFirestore();
-    const docRef = doc(db, "Productos", id);
-    getDoc(docRef)
-    .then((resp)=>{
-      setItem(
-        { ...resp.data(), id: resp.id}
-      );
-    })
-  }, [id])
-  return(
+    const fetchProduct = async () => {
+      try {
+        const db = getFirestore();
+        const productoRef = doc(db, "Productos", id);
+        const productoSnapshot = await getDoc(productoRef);
+
+        if (productoSnapshot.exists()) {
+          setProducto(productoSnapshot.data());
+        } else {
+          console.log("No se encontró el producto");
+        }
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  return (
     <div>
-      {item && <ItemList item = {item}/>}
+      {producto ? (
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={producto.imageId} alt={producto.name} />
+          <Card.Body>
+            <Card.Title>{producto.name}</Card.Title>
+            <Card.Text>
+              <strong>Precio:</strong> ${producto.price}
+            </Card.Text>
+            <Card.Text>
+              <strong>Descripción:</strong> {producto.description}
+            </Card.Text>
+            <Card.Text>
+              <strong>Categoría:</strong> {producto.category}
+            </Card.Text>
+            <Card.Text>
+              <strong>Stock:</strong> {producto.stock}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      ) : (
+        <p>Cargando detalle del producto...</p>
+      )}
     </div>
-  )
+  );
 }
 
-export default ItemDetailContainer
-
-
-
-
-
-
-/*const [products, setProducts] = useState([]);
-const category = "Flores"
-useEffect(()=> {
-  const db = getFirestore();
-
-  const productoRef = query(collection(db, "Productos"), where("category", "==", category));
-  getDocs(productoRef).then((collection) => {
-    const productos = collection.docs.map((doc)=>{
-      return doc.id();
-    });
-    setProducts(productos);
-  });
-}, []);
-
-return <ItemList products={products} />;
-
-};
-
 export default ItemDetailContainer;
-*/
