@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Checkout from "../Checkout/Checkout";
 
 const Count = ({stock}) => {
     const [count, setCount]= useState(1)
@@ -23,8 +24,10 @@ const Count = ({stock}) => {
     <h5>{count}</h5>
 
 <button onClick={agregar} disabled = {count === stock}>agregar</button>
-<button onClick={vaciar}>vaciar el carrito</button>
 <button onClick={quitar}>quitar</button>
+<button onClick={vaciar}>vaciar el carrito</button>
+<Checkout/>
+
 
         </div>
     )

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import Count from "../ItemCount/ItemCount";
 
 function ItemDetailContainer() {
   const { id } = useParams();
@@ -46,6 +47,7 @@ function ItemDetailContainer() {
             <Card.Text>
               <strong>Stock:</strong> {producto.stock}
             </Card.Text>
+            <Count stock={producto.stock} />
           </Card.Body>
         </Card>
       ) : (
