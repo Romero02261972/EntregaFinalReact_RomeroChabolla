@@ -2,30 +2,29 @@ import React from "react";
 import { FaShoppingBag } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-//import "./cartWidget.css";
+import "./CartWidget.css";
 
 export const CartWidget = () => {
   return (
     <Button id="cart" variant="success" className="ms-4 btn-fix">
       <FaShoppingBag className="text-light" />
       <Badge pill bg="secondary">
-        9
-      </Badge>
+        </Badge>
     </Button>
   );
 };
 
-const CartWidget = () => {
-  const {cartWidget, precioTotal, vaciarCartWidget} = useContext(cartContext);
+const carrito = () => {
+  const {carrito, vaciarCarrito} = useContext(cartContext);
   const handleVaciar = () => {
-    vaciarCartWidget();
+    vaciarCarrito();
   }
 
   return (
     <div className="container">
       <h1 className="main-title">CartWidget</h1>
       {
-        cartWidget.map((prod)=> (
+        carrito.map((prod)=> (
           <div key={prod.id}>
             <br />
             <h3>{prod.titulo}</h3>
@@ -34,6 +33,7 @@ const CartWidget = () => {
             <>Cant: {prod.cantidad}</>
             <br/>
           </div>
+
         ))
       }
     </div>

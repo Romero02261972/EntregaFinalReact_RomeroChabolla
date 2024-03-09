@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import "./styles.css";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
@@ -28,22 +29,22 @@ function ItemListContainer() {
   }, [category]);
 
   return (
-    <div>
+    <div className="container">
       <h2>Listado de Productos</h2>
-      <ul>
+      <div className="row row-cols-1 row-cols-md-3">
         {productos.map((producto) => (
-          <li key={producto.id}>
+          <div key={producto.id} className="col mb-4">
             <Link to={`/item/${producto.id}`}>
               <div>
-                <img src={producto.imageId} alt={producto.name} />
+                <img className="photoSize" src={producto.imageId} alt={producto.name} />
                 <p>{producto.name}</p>
                 <p>Precio: ${producto.price}</p>
                 <p>Stock: {producto.stock}</p>
               </div>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

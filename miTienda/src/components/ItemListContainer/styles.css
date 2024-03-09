@@ -1,8 +1,16 @@
 .photoSize {
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 1500px; 
-  height: 500px; 
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 400px; 
+  height: auto; 
   object-fit: cover;
  
+}
+
+ul {
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
 }

@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import  Checkout  from "./components/Checkout/Checkout";
+import CartWidget from "./components/CartWidget/CartWidget";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/category/:category" element={<ItemListContainer />} />
         <Route path="/category/:id" element={<ItemDetailContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route paht="/Cart" element={<CartWidget />} />
         <Route path="/Checkout" element= {<Checkout />} />
       </Routes>
     </BrowserRouter>

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
   return (
     <header>
+      <CartWidget />
       <nav>
         <ul>
           <li>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import Count from "../ItemCount/ItemCount";
 
 function ItemDetailContainer() {
@@ -29,7 +29,7 @@ function ItemDetailContainer() {
   }, [id]);
 
   return (
-    <div>
+    <div >
       {producto ? (
         <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" src={producto.imageId} alt={producto.name} />
