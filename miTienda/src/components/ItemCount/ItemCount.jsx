@@ -1,46 +1,50 @@
-import React, { useState } from "react";
-import Checkout from "../Checkout/Checkout";
+import React, { useState } from 'react';
+import Checkout from '../Checkout/Checkout';
 
-const Count = ({ stock }) => {
+const Count = ({ stock, product }) => {
   const [count, setCount] = useState(1);
   const [cart, setCart] = useState([]);
 
   const agregar = () => {
-    if (count <= stock) {
-      const newCartItem = {
-        id: Math.random(), 
-        count: count,
-      };
+    if (count < stock) {
+      setCount(count + 1);
+    }
+  };
+
+  const guardarOrden = () => {
+    if (count > 0) {
+      const newCartItem = { ...product, quantity: count };
       setCart([...cart, newCartItem]);
-      console.log("Producto agregado al carrito:", newCartItem);
-    } else {
-      console.log("No hay suficientes artículos");
+      console.log('Orden guardada:', newCartItem);
+      setCount(1);
     }
   };
 
   const vaciar = () => {
     setCart([]);
+    setCount(0);
   };
 
   const quitar = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   };
 
   return (
     <div>
-      <h5>agregar al carrito </h5>
+      <h5>Agregar al carrito </h5>
       <h5>{count}</h5>
 
       <button onClick={agregar} disabled={count >= stock}>
-        agregar
+        Agregar
       </button>
-      <button onClick={quitar}>quitar</button>
-      <button onClick={vaciar}>vaciar el carrito</button>
-      <Checkout cart={cart} />
+      <button onClick={quitar}>Quitar</button>
+      <button onClick={vaciar}>Vaciar el carrito</button>
+      <Checkout cart={cart} buyer={{ name: '', telefono: '', email: '' }} />
     </div>
   );
 };
 
 export default Count;
+
