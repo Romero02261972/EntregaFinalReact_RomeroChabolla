@@ -32,7 +32,7 @@ function ItemDetailContainer() {
     <div >
       {producto ? (
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={producto.imageId} alt={producto.name} />
+          <Card.Img variant="top" src={`/${producto.imageId}`} alt={producto.name} />
           <Card.Body>
             <Card.Title>{producto.name}</Card.Title>
             <Card.Text>
